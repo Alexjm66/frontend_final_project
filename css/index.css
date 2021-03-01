@@ -104,5 +104,21 @@ ul a{
   }
 
 .h1:after {
-    margin-left: 10px;
-  }
+margin-left: 10px;
+}
+
+#images{
+    display: flex;
+    justify-content:center;
+    margin-top: 5%;
+}
+.image{
+    background-color: #F1F2F6;
+    margin-right: 10px;
+    text-align: center;
+}
+#shop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

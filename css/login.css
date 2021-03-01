@@ -14,7 +14,36 @@
     color: #ffffff;
 }
 
+#content{
+    padding-top: 10%;
+    display: grid;
+    place-items: center;
+}
 #form{
-    display: flex;
-    justify-content:center;
+    padding-top: 5%;
+    color:#ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+#form input{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+}
+#form button{
+    margin-top: 6%;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00A6ED;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+#heading{
+    font-size: 25px;
+    font-weight: bold;
+    
 }
