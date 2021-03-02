@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #head1{
     display:flex;
 }
@@ -117,8 +118,25 @@ margin-left: 10px;
     margin-right: 10px;
     text-align: center;
 }
+#shop-now{
+    margin-top: 5%;
+}
 #shop{
+    margin-top: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+#shop #shop-content {
+    padding-inline-start: 10px;
+    padding-bottom: 10px;
+}
+#shop-content button {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00A6ED;
+    color: #ffffff;
+    border-radius: 10px;
 }
