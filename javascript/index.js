@@ -18,5 +18,6 @@ function createUsers(){
     .then((json) => {
       alert("User has been created");
       document.getElementById("reg-form").reset();
+      window.location.href="./login.html";
     });
 }

@@ -136,7 +136,9 @@ margin-left: 10px;
     height: 40px;
     font-size: 20px;
     font-weight: bold;
-    background-color: #00A6ED;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
     border-radius: 10px;
+    cursor: pointer;
 }

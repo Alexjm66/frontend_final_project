@@ -1,11 +1,13 @@
-let users;
+let users = [];
 
-fetch("http://127.0.0.1:5000/login/")
+
+fetch("http://127.0.0.1:5000/list-users/")
     .then((response) =>response.json())
     .then((data) => {
-    console.table(data.body);
-    users = data.body;
+    console.log(data);
+    users = data;
 });
+
 function login(){
     let inputs = document.getElementsByTagName("input");
     
@@ -13,7 +15,7 @@ function login(){
     let password = inputs[1].value;
 
     let log = users.filter(user => {
-        return user.username == username && user.password == password ?true:false;
+        return user.username == username && user.password == password ?true : false;
     })
 
     console.log(log);
@@ -22,7 +24,7 @@ function login(){
         alert("You have successfully logged in");
         window.location.href = "./home.html";
     }else{
-        alert("please enter a valid username and password");
+        alert("Please enter a valid username and password");
     }
 }
     
