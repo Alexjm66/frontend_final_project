@@ -1,7 +1,7 @@
 let users = [];
 
 
-fetch("http://127.0.0.1:5000/list-users/")
+fetch("https://lit-headland-71240.herokuapp.com/list-users/")
     .then((response) =>response.json())
     .then((data) => {
     console.log(data);
