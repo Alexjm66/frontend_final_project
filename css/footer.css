@@ -1,0 +1,61 @@
+footer{
+    background-color: #000000;
+    height: 100%;
+    padding-bottom: 2%;
+}
+.logo{
+    background-color: #ffffff;
+    height: 40%;
+    border-radius: 50%;
+    margin-top: 8%;
+    object-fit: cover;
+}
+.heading{
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+.contact{
+    padding-top: 2%;
+    margin-left: 5%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 10px;
+  }
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.form{
+    margin-right: 10%;
+}
+.icons{
+    margin-top: 10%;
+}
+.in-touch{
+    margin-top: 4%;
+}

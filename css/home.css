@@ -23,7 +23,7 @@
     padding-top: 50px;  
 }
 #icon{
-    margin-top: 65px;
+    margin-top: 50px;
     margin-right: 50px;
 }
 #search{
@@ -116,6 +116,7 @@ margin-left: 10px;
     display: flex;
     justify-content:center;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 .image{
     background-color: #F1F2F6;

@@ -7,6 +7,7 @@
     <title>Home Page</title>
     <link type="text/css" href="css/home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" href="css/footer.css" rel="stylesheet">
 </head> 
 <body>
     <section id="section">
@@ -19,7 +20,7 @@
                         <img src="images/exclusive kicks.png" height="70px">
                     </div>
                     <div id="icon">
-                        <a href=""><i class="fa fa-shopping-cart" style="font-size:38px;color:black"></i></a>
+                        <a href="cart.html"><i class="fa fa-shopping-cart" style="font-size:38px;color:black"></i></a>
                     </div>
                 </div>
                <div id="head">
@@ -29,7 +30,6 @@
                             <a href="home.html"><li>HOME</li></a>
                             <a href=""><li>ABOUT</li></a>
                             <a href="products.html"><li>SHOP NOW</li></a>
-                            <a href=""><li>CONTACT</li></a>
                         </ul>
                     </nav>
                 </div>
@@ -80,10 +80,6 @@
                 <img src="images/shopexc.jpg" width="800px" height="600px"><br>
                 <button type="submit">Shop Exclusive</button>
             </div>
-            <div id="shop-content">
-                <img src="images/shopall.jpg" width="1000px" height="600px"><br>
-                <button type="submit">Shop All</button>
-            </div>
         </div>
         <div id="featured">
             <h2 class="h1">Coming Soon</h2>
@@ -111,6 +107,44 @@
             </div>
         </div>
     </section>
-
+    <section id="footer">
+        <footer>
+            <div class="contact">
+                <div class="in-touch">
+                    <div class="heading">
+                        <h3>GET IN TOUCH</h3>
+                        </div>
+                        <div class="icons">
+                            <a href="#" class="fa fa-facebook"></a>
+                            <label>exc.kicks</label><br><br>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <label>@exclusive.kicks</label><br><br>
+                            <a href="#" class="fa fa-google"></a>
+                            <label>exclusivekicks@gmail.com</label><br><br>
+                            <a href="#" class="fa fa-linkedin"></a>
+                            <label>@exclusivekicks.linkedin</label><br><br>
+                        </div>
+                </div>
+                <div class="logo">
+                    <img src="images/logo.png" width="300px" height="300px">
+                </div>
+                <div class="form">
+                    <h3>SEND US A MESSAGE</h3><br>
+                    <form>
+                        <label>Name</label><br>
+                        <input type="text" id="name" placeholder="Enter name" name="Name"></br></br>
+                        <label>Surname</label><br>
+                        <input type="text" id="surname" placeholder="Enter surname"name="Surname" ></br></br>
+                        <label>Email</label><br>
+                        <input type="text" id="email" placeholder="Enter email"name="Email"></br></br>
+                        <label>Message</label></br>
+                        <textarea cols="40" rows="10" name="message" placeholder="Type your message"name="Message" ></textarea></br></br>
+                        <button id="button" type="submit">Send Message</button>
+                    </form>
+                </div>
+                
+            </div>
+        </footer>
+    </section>
 </body>
 </html>
