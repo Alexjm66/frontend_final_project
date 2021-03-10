@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <section id="">
@@ -17,6 +18,9 @@
                 <div id="heading">
                     <img src="images/exclusive kicks.png" height="70px">
                 </div>
+                <div id="icon">
+                    <i id = "myBtn" class="fa fa-shopping-cart" style="font-size:38px;color:black"></i>
+                </div>
             </div>
            <div id="head">
             <div id="nav">
@@ -25,7 +29,6 @@
                         <a href="home.html"><li>HOME</li></a>
                         <a href=""><li>ABOUT</li></a>
                         <a href="products.html"><li>SHOP NOW</li></a>
-                        <a href=""><li>CONTACT</li></a>
                     </ul>
                 </nav>
             </div>
@@ -43,8 +46,20 @@
         
         <ul id="products">
         </ul>
-        
-    </section>
-    <script src="javascript/products.js"></script>
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="content">
+                <span class="close">&times;</span>
+                <div class="total-price">
+                    <div class="total-results">
+                        <h1>Total Price: R </h1>
+                        <h1 class="price">0</h1>
+                        <button class="checkout" onclick="checkOut();">Checkout</button>
+                    </div> 
+                </div>
+                <div id="contents"></div>
+            </div>
+        </div>
+    <!-- <script src="javascript/products.js"></script> -->
+    <script src="javascript/cart.js"></script>
 </body>
 </html>

@@ -1,101 +1,155 @@
-let cart = JSON.parse(localStorage.getItem("cart"))
-cart ? cart : cart = [];
+let productArray = [];
+let cartlist = [];
 
-function updateCartLink(){
-    document.getElementById('cart-link').innerHTML = `Cart(${ cart.length })`;
-}
-updateCartLink()
-
-// Check if cart content is available
-
-let cartContent = document.getElementById('cart-content');
-console.log(cartContent);
-
-function renderCart(){
-    // Get data from localStorage
-    let cart = JSON.parse(localStorage.getItem("cart"))
-    cartContent.innerHTML='';
-    if(cartContent){
-        cartContent.innerHTML = `
-            <h1 style="text-align:center;">Cart</h1>
-            <table style="text-align: left">
-                <thead style="background: #ffffff">
-                    <tr class="test">
-                        <th class=""imgcart">Image</th>
-                        <th class="namecart">Name</th>
-                        <th class="descart">Category</th>
-                        <th class="pricecart">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${ renderCartItems() }
-                </tbody>
-            </table>
-        `
+// function fetchData(){
+    function getProd() {
+        fetch("http://127.0.0.1:5000/list-prod/")
+        .then((response) => response.json())
+        .then((data) => {
+            console.table(data);
+            let list = document.querySelector('#products');
+            console.log(list);
+            productArray = data;
+            data.forEach((product) => {
+                let item =`
+                <div class="product-container">
+                    <div class="product-image">
+                    <img src=${product.image}/>
+                    </div>
+                    <div class="product-info">
+                    <h4>${product.name}</h4>
+                    <h4>${product.description}</h4>
+                    <h4>${product.price}</h4>
+                    <button class="btn" type = "button" onclick="add_to_cart(${ product.id })">Add to cart</button>
+                    </div>
+                </div>
+                `;
+                list.innerHTML += item;
+                });
+            });
     }
-    console.log("Cart Rendered");
-}
+    getProd();
+    
+//     fetch("http://127.0.0.1:5000/list-prod/")
+//         .then((response) => {
+//             if (response.ok) {
+//                 console.log("Success");
+//             }else{
+//                 console.log("NOT SUCCESSFUL");
+//             }
+//             return response.json();
+//         })
+//         .then((data) => {
+//             let productList = document.querySelector("#products");
 
-renderCart()
+//             productArray = data;
+//             data.forEach((product) => {
+//                 let productItem = `
+//                 <div class="product-card">
+//                     <div class="product-image">
+//                     <img id=${product.ID} class="prodcts-images" src=${product.image}
+//                     </div>
+//                     <div class="product-info">
+//                     <h3 id="${product.name}">${product.name}</h3>
+//                     <h3 id="${product.description}">${product.description}</h3>
+//                     <h3 id="${product.price}">R${product.price}</h3>
+//                     <button class="add_cart" onclick="add_to_cart(${product.id}">Add to cart</button>
+//                 </div>`;
 
-function renderCartItems(){
-    console.log("Rendering Cart Items");
-    let content = ''
-    cart.forEach(product => {
-        content +=`
-            <tr>
-                <td><img src=${ product.image } alt=${ item.name }/></td>
-                <td>${ product.name }</td>
-                <td>${ product.description }</td>
-                <td>${ product.price}</td>
-                <td class="removeBtn"><button type="button" onclick="remove(${ product.id })"> Remove from cart </button></td>
-            </tr>
+//                 productList.innerHTML += productItem;
+//             });
             
-        `
-    })
+//         })
+// }
+function cartCount(){
+    let x = productCount;
+    document.getElementById("lblCartCount").innerHTML = x;
+}
+function add_to_cart(id){
 
-    return content;
+    // let cart = JSON.parse(localStorage.getItem("cart"));
+    // cart ? cart : cart = [];
+    
+    // fetch('http://127.0.0.1:5000/list-prod/')
+    // .then(res => res.json())
+    // .then((data) => {
+    //     let selectedItem = data.filter((product) => {
+    //         return product.id = id
+    //     })
+
+    //     if(selectedItem.length > 0){
+    //         cart.push(selectedItem[0]);
+    //         localStorage.setItem("cart", JSON.stringify(cart))
+    //         alert("Item has been added to cart")
+    //     }
+    // })
+
+    let modal= document.getElementById("contents")
+    let cartItem = productArray.filter((product) => {
+        return product.id == id;
+    });
+    productCount = cartlist.push(cartItem[0]);
+    let selectedItems = cartItem[0];
+    console.log(productCount)
+    console.log(selectedItems)
+    console.log(cartItem)
+
+    let cart_stuff = `
+    <div class="opened-modal-content">
+    <div id="items${id}" product-prices=${selectedItems.price}>${selectedItems.name} :${selectedItems.price}</div>
+    <button class="removeButton" onclick="removeItems(${id})">Remove</button>
+    </div>
+    `;
+
+    modal.innerHTML += cart_stuff;
+
+    console.log(cartlist);
+    console.log(productCount);
+
+    function calculateTotalPrice(id){
+        let totalValue = document.getElementsByClassName("price")[0];
+        let num1 = parseInt(totalValue.innerHTML);
+        let num2 = document
+        .getElementById("items" + id)
+        .getAttribute("product-prices");
+    
+        let totalAmount = parseInt(num1) + parseInt(num2)
+        totalValue.innerHTML = totalAmount;
+        console.log(totalValue);
+    }
+    calculateTotalPrice()
+    cartCount()
 }
 
 
-function add(){
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    cart ? cart : cart = [];
-    cart.push(selectedProduct);
-    console.log(cart);
-    document.getElementById("cart-link").innerHTML = `Cart(${cart.length })`;
-    localStorage.setItem("cart",JSON.stringify(cart));
+function checkOut(){
+    let totals = document.getElementsByClassName("price")[0].innerHTML;
+    alert(`Thanks for your purchase, Total${totals}`);
+    let clear = "";
+    let x = document.getElementById("contents");
+    x.innerHTML = clear;
+
+
+    document.getElementById("lblCartCount").innerHTML = f;
+    window.location.href = "./index.html";
 }
 
-function remove(id){
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    // cart = JSON.parse(cartItem);
-    console.log(cart);
+let modal = document.getElementById("myModal")
 
-    let cartMinusItem = cart.filter(item => {
-        return item.id !== id
-    })
+let btn = document.getElementById("myBtn")
 
-    localStorage.setItem("cart", JSON.stringify(cartMinusItem));
+let span = document.getElementsByClassName("close")[0];
 
-    console.log("Removing item from cart");
-    renderCart()
-    window.location.href = "./cart.html"
-}
+btn.onclick = function(){
+    modal.style.display = "block";
+};
 
-function clearCart(){
-    localStorage.removeItem("cart");//clear local storage data
-}
+span.onclick = function() {
+    modal.style.display = "none"
+};
 
-
-
-function createCart(){
-    let inCart;
-
-    let cart = localStorage.getItem("cart");
-    console.log("Whats in your cart?", JSON.parse(cart));
-}
-
-function showCart(){
-    let added = document.getElementById("cartItem");
+window.onclick = function(event) {
+    if (event.target == modal){
+        modal.style.display = "none"
+    }
 }
