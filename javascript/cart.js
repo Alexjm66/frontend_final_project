@@ -31,6 +31,7 @@ let cartlist = [];
     getProd();
 
 function renderCart() {
+    
     // Get cart from local storage
     let cart = JSON.parse(localStorage.getItem("cart"));
     // Make sure cart is valid
@@ -98,7 +99,6 @@ let btn = document.getElementById("myBtn")
 
 let span = document.getElementsByClassName("close")[0];
 
-let rmvebtn = document.getElementById("removeButton")
 
 btn.onclick = function(){
     modal.style.display = "block";
